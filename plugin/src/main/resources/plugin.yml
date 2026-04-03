@@ -1,0 +1,42 @@
+name: GameServerPlugin
+version: '${version}'
+main: com.strategygames.plugin.GameServerPlugin
+api-version: '1.21'
+description: MC bridge plugin for the Strategy Games server
+authors: [serkenn]
+soft-depend: [Towny]
+
+commands:
+  research:
+    description: Research technology tree commands
+    usage: /research <candidates|start <techId>>
+    permission: strategygames.research
+
+  icbm:
+    description: ICBM management commands
+    usage: /icbm <status|build|launch <targetNation>>
+    permission: strategygames.icbm
+
+  decision:
+    description: Decision/policy commands
+    usage: /decision <list|execute <decisionId>>
+    permission: strategygames.decision
+
+  nation:
+    description: View nation stats
+    usage: /nation [stats]
+    permission: strategygames.nation
+
+permissions:
+  strategygames.research:
+    description: Allows using research commands
+    default: true
+  strategygames.icbm:
+    description: Allows using ICBM commands
+    default: op
+  strategygames.decision:
+    description: Allows executing decisions
+    default: true
+  strategygames.nation:
+    description: Allows viewing nation stats
+    default: true
