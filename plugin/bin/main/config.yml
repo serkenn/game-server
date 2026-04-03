@@ -1,0 +1,3 @@
+api:
+  # URL of the game-logic-api service (ClusterIP in k8s)
+  url: "http://game-logic-api:8080"

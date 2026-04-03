@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mariadb.minecraft-debug.svc.cluster.local:3306/strategy_games_debug
+    username: sgames
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+rcon:
+  host: minecraft-debug-headless.minecraft-debug.svc.cluster.local
+  port: 25575
+  password: ${RCON_PASSWORD}
+
+logging:
+  level:
+    com.strategygames: DEBUG

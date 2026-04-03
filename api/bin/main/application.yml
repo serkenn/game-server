@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: game-logic-api
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:strategy_games}
+    username: ${DB_USER:sgames}
+    password: ${DB_PASSWORD:changeme}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+rcon:
+  host: ${RCON_HOST:localhost}
+  port: ${RCON_PORT:25575}
+  password: ${RCON_PASSWORD:changeme}
+  enabled: ${RCON_ENABLED:true}
+
+logging:
+  level:
+    com.strategygames: INFO
